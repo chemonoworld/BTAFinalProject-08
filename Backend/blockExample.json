@@ -1,0 +1,354 @@
+{
+  "jsonrpc": "2.0",
+  "id": 0,
+  "result": {
+    "query": "tm.event='NewBlock'",
+    "data": {
+      "type": "tendermint/event/NewBlock",
+      "value": {
+        "block": {
+          "header": {
+            "version": {
+              "block": "11"
+            },
+            "chain_id": "testing",
+            "height": "17028",
+            "time": "2022-11-03T12:42:49.147813082Z",
+            "last_block_id": {
+              "hash": "CF392982FD2AA5284F704926EFEFE1547443A42FC494CF41639A685BF4356C2A",
+              "parts": {
+                "total": 1,
+                "hash": "0F990639E7019FEE7A3E3BBFA6E0B1EE5A4151E037179DA0D216FBEEADAF2647"
+              }
+            },
+            "last_commit_hash": "379720A906C656B8972F484CCDBC96B3021AF489058B37710D95BFAD66E27AC8",
+            "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+            "validators_hash": "72F095F8F502EE69290988AA1FBA9F53459864358478FE60E04E7975615BB821",
+            "next_validators_hash": "72F095F8F502EE69290988AA1FBA9F53459864358478FE60E04E7975615BB821",
+            "consensus_hash": "048091BC7DDC283F77BFBF91D73C44DA58C3DF8A9CBC867405D8B7F3DAADA22F",
+            "app_hash": "4AAD1229D78E86995C85FA6FB9A2715EBB78AEEF33A0B16A4EDD95DF102CDEB9",
+            "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+            "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+            "proposer_address": "BC7093A54CAD8867593EE3C2E86E2B5FDBB0D788"
+          },
+          "data": {
+            "txs": []
+          },
+          "evidence": {
+            "evidence": []
+          },
+          "last_commit": {
+            "height": "17027",
+            "round": 0,
+            "block_id": {
+              "hash": "CF392982FD2AA5284F704926EFEFE1547443A42FC494CF41639A685BF4356C2A",
+              "parts": {
+                "total": 1,
+                "hash": "0F990639E7019FEE7A3E3BBFA6E0B1EE5A4151E037179DA0D216FBEEADAF2647"
+              }
+            },
+            "signatures": [
+              {
+                "block_id_flag": 2,
+                "validator_address": "BC7093A54CAD8867593EE3C2E86E2B5FDBB0D788",
+                "timestamp": "2022-11-03T12:42:49.147813082Z",
+                "signature": "FNSu+K1de3JtFiJuXJYG4/sc9rEqmMLlq6bOZZDkX2mA23YDlTAuJa/0dADz20YKSNsHNiabJPwcHKnYJnQYCQ=="
+              },
+              {
+                "block_id_flag": 3,
+                "validator_address": "7177000EC74890901D5FABF14C19692BEB68E811",
+                "timestamp": "2022-11-03T12:42:49.577330286Z",
+                "signature": "O7VHncGBamX8xBomG1Sju97f3wbKDJu2Sm0uS9or66OmPXylhg86UtVREwNSF3yH7349QcP3H3z8myeUcZgMBw=="
+              },
+              {
+                "block_id_flag": 3,
+                "validator_address": "AF5767D1517082423C02846F91B253626A9B629B",
+                "timestamp": "2022-11-03T12:42:49.31663221Z",
+                "signature": "DpN7fRwFGqU4qDvg9xbgZ1fVJgTmoiNFllu4mU8378QrnfNmk8WJHTYFb0kxQgvgJHnJMlhcRjLQ69319ghSDQ=="
+              }
+            ]
+          }
+        },
+        "result_begin_block": {
+          "events": [
+            {
+              "type": "coin_spent",
+              "attributes": [
+                {
+                  "key": "c3BlbmRlcg==",
+                  "value": "b3NtbzE3eHBmdmFrbTJhbWc5NjJ5bHM2Zjg0ejNrZWxsOGM1bGN6c3NhMA==",
+                  "index": true
+                },
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "coin_received",
+              "attributes": [
+                {
+                  "key": "cmVjZWl2ZXI=",
+                  "value": "b3NtbzFqdjY1czNncnFmNnY2amwzZHA0dDZjOXQ5cms5OWNkODB5aHZsZA==",
+                  "index": true
+                },
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "transfer",
+              "attributes": [
+                {
+                  "key": "cmVjaXBpZW50",
+                  "value": "b3NtbzFqdjY1czNncnFmNnY2amwzZHA0dDZjOXQ5cms5OWNkODB5aHZsZA==",
+                  "index": true
+                },
+                {
+                  "key": "c2VuZGVy",
+                  "value": "b3NtbzE3eHBmdmFrbTJhbWc5NjJ5bHM2Zjg0ejNrZWxsOGM1bGN6c3NhMA==",
+                  "index": true
+                },
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "message",
+              "attributes": [
+                {
+                  "key": "c2VuZGVy",
+                  "value": "b3NtbzE3eHBmdmFrbTJhbWc5NjJ5bHM2Zjg0ejNrZWxsOGM1bGN6c3NhMA==",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "proposer_reward",
+              "attributes": [
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                },
+                {
+                  "key": "dmFsaWRhdG9y",
+                  "value": "b3Ntb3ZhbG9wZXIxa3hlbmVydGZzcm13d2xwdTd4dXIyZWg2dDJ5cTl5d3B4amRtamY=",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "commission",
+              "attributes": [
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                },
+                {
+                  "key": "dmFsaWRhdG9y",
+                  "value": "b3Ntb3ZhbG9wZXIxa3hlbmVydGZzcm13d2xwdTd4dXIyZWg2dDJ5cTl5d3B4amRtamY=",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "rewards",
+              "attributes": [
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                },
+                {
+                  "key": "dmFsaWRhdG9y",
+                  "value": "b3Ntb3ZhbG9wZXIxa3hlbmVydGZzcm13d2xwdTd4dXIyZWg2dDJ5cTl5d3B4amRtamY=",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "commission",
+              "attributes": [
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                },
+                {
+                  "key": "dmFsaWRhdG9y",
+                  "value": "b3Ntb3ZhbG9wZXIxa3hlbmVydGZzcm13d2xwdTd4dXIyZWg2dDJ5cTl5d3B4amRtamY=",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "rewards",
+              "attributes": [
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                },
+                {
+                  "key": "dmFsaWRhdG9y",
+                  "value": "b3Ntb3ZhbG9wZXIxa3hlbmVydGZzcm13d2xwdTd4dXIyZWg2dDJ5cTl5d3B4amRtamY=",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "commission",
+              "attributes": [
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                },
+                {
+                  "key": "dmFsaWRhdG9y",
+                  "value": "b3Ntb3ZhbG9wZXIxbjQwOTc0NGZ1ZDVuOXA1bW5sa3NuYTJrcjYycG5kY3g4d25hc3M=",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "rewards",
+              "attributes": [
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                },
+                {
+                  "key": "dmFsaWRhdG9y",
+                  "value": "b3Ntb3ZhbG9wZXIxbjQwOTc0NGZ1ZDVuOXA1bW5sa3NuYTJrcjYycG5kY3g4d25hc3M=",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "commission",
+              "attributes": [
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                },
+                {
+                  "key": "dmFsaWRhdG9y",
+                  "value": "b3Ntb3ZhbG9wZXIxenZoZnJ6cjA4cDB6Z3I2bHh3bng0MjZlNGh6eGFsa2hoNXlhMno=",
+                  "index": true
+                }
+              ]
+            },
+            {
+              "type": "rewards",
+              "attributes": [
+                {
+                  "key": "YW1vdW50",
+                  "value": "",
+                  "index": true
+                },
+                {
+                  "key": "dmFsaWRhdG9y",
+                  "value": "b3Ntb3ZhbG9wZXIxenZoZnJ6cjA4cDB6Z3I2bHh3bng0MjZlNGh6eGFsa2hoNXlhMno=",
+                  "index": true
+                }
+              ]
+            }
+          ]
+        },
+        "result_end_block": {
+          "validator_updates": [],
+          "consensus_param_updates": {
+            "block": {
+              "max_bytes": "22020096",
+              "max_gas": "-1"
+            },
+            "evidence": {
+              "max_age_num_blocks": "100000",
+              "max_age_duration": "172800000000000",
+              "max_bytes": "1048576"
+            },
+            "validator": {
+              "pub_key_types": [
+                "ed25519"
+              ]
+            },
+            "version": {}
+          },
+          "events": []
+        }
+      }
+    },
+    "events": {
+      "transfer.recipient": [
+        "osmo1jv65s3grqf6v6jl3dp4t6c9t9rk99cd80yhvld"
+      ],
+      "message.sender": [
+        "osmo17xpfvakm2amg962yls6f84z3kell8c5lczssa0"
+      ],
+      "rewards.amount": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "rewards.validator": [
+        "osmovaloper1kxenertfsrmwwlpu7xur2eh6t2yq9ywpxjdmjf",
+        "osmovaloper1kxenertfsrmwwlpu7xur2eh6t2yq9ywpxjdmjf",
+        "osmovaloper1n409744fud5n9p5mnlksna2kr62pndcx8wnass",
+        "osmovaloper1zvhfrzr08p0zgr6lxwnx426e4hzxalkhh5ya2z"
+      ],
+      "coin_received.receiver": [
+        "osmo1jv65s3grqf6v6jl3dp4t6c9t9rk99cd80yhvld"
+      ],
+      "coin_received.amount": [
+        ""
+      ],
+      "transfer.amount": [
+        ""
+      ],
+      "proposer_reward.validator": [
+        "osmovaloper1kxenertfsrmwwlpu7xur2eh6t2yq9ywpxjdmjf"
+      ],
+      "transfer.sender": [
+        "osmo17xpfvakm2amg962yls6f84z3kell8c5lczssa0"
+      ],
+      "commission.amount": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "commission.validator": [
+        "osmovaloper1kxenertfsrmwwlpu7xur2eh6t2yq9ywpxjdmjf",
+        "osmovaloper1kxenertfsrmwwlpu7xur2eh6t2yq9ywpxjdmjf",
+        "osmovaloper1n409744fud5n9p5mnlksna2kr62pndcx8wnass",
+        "osmovaloper1zvhfrzr08p0zgr6lxwnx426e4hzxalkhh5ya2z"
+      ],
+      "coin_spent.spender": [
+        "osmo17xpfvakm2amg962yls6f84z3kell8c5lczssa0"
+      ],
+      "coin_spent.amount": [
+        ""
+      ],
+      "proposer_reward.amount": [
+        ""
+      ],
+      "tm.event": [
+        "NewBlock"
+      ]
+    }
+  }
+}
