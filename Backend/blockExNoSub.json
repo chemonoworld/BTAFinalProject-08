@@ -1,0 +1,57 @@
+{
+    "jsonrpc": "2.0",
+    "id": -1,
+    "result": {
+        "block_id": {
+            "hash": "FFA6EF0B920DF9771711BF1E96C45B3B517167E08FC09D1630DD245FDC13279E",
+            "parts": {
+                "total": 1,
+                "hash": "9630257F856215DA36FAF1124724672B64CE582E1FF0DB34FE41C37B39C1EFFB"
+            }
+        },
+        "block": {
+            "header": {
+                "version": {
+                    "block": "11"
+                },
+                "chain_id": "testing",
+                "height": "1",
+                "time": "2022-11-02T12:42:59.896263231Z",
+                "last_block_id": {
+                    "hash": "",
+                    "parts": {
+                        "total": 0,
+                        "hash": ""
+                    }
+                },
+                "last_commit_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "data_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "validators_hash": "E4050EE1F7AF96ADB99B193F7412B5AB3570B8D892B6B9A067A1D7AFFFA33803",
+                "next_validators_hash": "E4050EE1F7AF96ADB99B193F7412B5AB3570B8D892B6B9A067A1D7AFFFA33803",
+                "consensus_hash": "048091BC7DDC283F77BFBF91D73C44DA58C3DF8A9CBC867405D8B7F3DAADA22F",
+                "app_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "last_results_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "evidence_hash": "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                "proposer_address": "AF5767D1517082423C02846F91B253626A9B629B"
+            },
+            "data": {
+                "txs": []
+            },
+            "evidence": {
+                "evidence": []
+            },
+            "last_commit": {
+                "height": "0",
+                "round": 0,
+                "block_id": {
+                    "hash": "",
+                    "parts": {
+                        "total": 0,
+                        "hash": ""
+                    }
+                },
+                "signatures": []
+            }
+        }
+    }
+}

@@ -7,7 +7,26 @@ import bodyParser from "body-parser";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import ws from "ws";
+import { MongoClient } from "mongodb";
 
+const URL_FOR_CONNECTION = "mongodb+srv://jinwoo:qwe123@cluster0.fzkvv.mongodb.net/bta-osmo-explorer?retryWrites=true&w=majority"
+// MongoClient.connect(URL_FOR_CONNECTION);
+
+const client = new MongoClient(URL_FOR_CONNECTION);
+const db = client.db("bta-osmo-explorer");
+const BLOCKS = db.collection('BLOCK_INFO');
+const TXS = db.collection('TX_INFO');
+const mongoRun = async() => {
+    try {
+        const doc = {
+            block: "block입니당",
+            txs: [1,2,3,4]
+        }
+        BLOCKS.insertOne(doc);
+    } catch (error) {
+        
+    }
+}
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,9 +45,7 @@ app.use(
     })
 );
 
-
-
-
 app.listen(PORT, async () => {
+    mongoRun();
     console.log(`      🚀 HTTP Server is starting on ${PORT}`);
 });
