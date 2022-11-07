@@ -1,12 +1,14 @@
 const router = require("express").Router();
 const {
     getBlockHeight,
-    getBlockInfoFromHeight
+    getBlockInfoFromHeight,
+    getBlocksInfoFromMinHeightToMaxHeight
 } = require("../controllers/block");
 
 
 router.get('/', getBlockInfoFromHeight);
 router.get('/blockHeight', getBlockHeight);
+router.get('/blocks', getBlocksInfoFromMinHeightToMaxHeight);
 
 
 

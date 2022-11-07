@@ -6,6 +6,7 @@ const { Block } = require("../models");
 const { DATE } = require("sequelize");
 const { getFeeFromTxRaw, extractTxInfo } = require("./parseTxInfo");
 const axios = require("axios");
+const block = require('../controllers/block');
 const env = process.env;
 
 async function extractBlockInfo(data) {
@@ -13,7 +14,7 @@ async function extractBlockInfo(data) {
     if (!blockData.result) return null;
     const { result: { block_id: { hash }, block: { header: { chain_id: chainId, height, time, proposer_address: proposerAddress }, data: { txs }, last_commit: { round } } } } = blockData;
     const gas = await getTotalGasFromBlock(height);
-    const txHashes = txs.map(tx => toHex(sha256(Buffer.from(tx,'base64'))).toUpperCase());
+    const txHashes = txs.map(tx => toHex(sha256(Buffer.from(tx, 'base64'))).toUpperCase());
     const res = {
         chainId,
         height: Number(height),
@@ -32,7 +33,7 @@ async function extractBlockInfoFromSub(data) { // for subscription (websocket)
     const blockData = typeof data === "string" ? JSON.parse(data) : data;
     if (!blockData.result.data) return null;
     const { result: { block_id: { hash }, block: { header: { chain_id: chainId, height, time, proposer_address: proposerAddress }, data: { txs }, last_commit: { round } } } } = blockData;
-    const txHashes = txs.map(tx => toHex(sha256(Buffer.from(tx,'base64'))).toUpperCase());
+    const txHashes = txs.map(tx => toHex(sha256(Buffer.from(tx, 'base64'))).toUpperCase());
     const res = {
         chainId,
         height: Number(height),
@@ -54,7 +55,7 @@ async function extractBlocksInfoFromMinHeightToMaxHeight(minHeight, maxHeight) {
     const { result: { last_height: lastHeight, block_metas: blocksInfo } } = blocks.data;
     let result = [];
     blocksInfo.forEach(blockInfo => {
-        const {block_id: {hash}, header: {chain_id: chainId, height, time, proposer_address: proposerAddress}, num_txs: numOfTxs} = blockInfo;
+        const { block_id: { hash }, header: { chain_id: chainId, height, time, proposer_address: proposerAddress }, num_txs: numOfTxs } = blockInfo;
         const extractedBlockInfo = {
             chainId,
             height: Number(height),
@@ -65,6 +66,33 @@ async function extractBlocksInfoFromMinHeightToMaxHeight(minHeight, maxHeight) {
         }
         result.push(extractedBlockInfo);
     });
+    return result;
+}
+
+async function extractFullBlocksInfoFromMinHeightToMaxHeight(minHeight, maxHeight) {
+    if (typeof minHeight !== "number" || typeof maxHeight !== "number") return null;
+    if ((maxHeight - minHeight) >= 20 || (maxHeight - minHeight) < 0) return null;
+    let result = [];
+    for (let i = 0; i < (maxHeight - minHeight + 1); ++i) {
+        let blockData = await axios.get(process.env.END_POINT + "block?height=" + String(minHeight + i));
+        if (!blockData.data) return null;
+        blockData = blockData.data;
+        const { result: { block_id: { hash }, block: { header: { chain_id: chainId, height, time, proposer_address: proposerAddress }, data: { txs }, last_commit: { round } } } } = blockData;
+        const gas = await getTotalGasFromBlock(height);
+        const txHashes = txs.map(tx => toHex(sha256(Buffer.from(tx, 'base64'))).toUpperCase());
+        const blockInfo = {
+            chainId,
+            height: Number(height),
+            time,
+            hash,
+            numOfTxs: txs.length,
+            gas,
+            round,
+            proposerAddress, // >> moniker
+            txHashes // tx base64 Encoding >> txHashes array (FE)
+        }
+        result.push(blockInfo);
+    }
     return result;
 }
 
@@ -118,4 +146,4 @@ async function getExtractedBlockInfoOrNullFromBlock(blockHeight) {
     return extractedTxs;
 }
 
-module.exports = { extractBlockInfo, extractBlockInfoFromSub, getTotalGasFromBlock, getExtractedBlockInfoOrNullFromBlock, extractBlocksInfoFromMinHeightToMaxHeight};
+module.exports = { extractBlockInfo, extractBlockInfoFromSub, getTotalGasFromBlock, getExtractedBlockInfoOrNullFromBlock, extractBlocksInfoFromMinHeightToMaxHeight, extractFullBlocksInfoFromMinHeightToMaxHeight };
